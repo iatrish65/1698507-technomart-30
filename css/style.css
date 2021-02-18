@@ -50,9 +50,11 @@ body {
   font-weight: 400;
   color: var(--basic-black);
   background-color: var(--basic-white);
-  background-image: url("../img/bg.jpg");
-  background-position: top center;
-  background-repeat: no-repeat;
+  
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+
 }
 
 a {
@@ -67,6 +69,12 @@ li {
 img {
   max-height: 100%;
   height: auto;
+}
+
+/*GriD*/
+
+.page {
+  height: 100%
 }
 
 .button {
@@ -368,9 +376,103 @@ color: var(--light-gray);
   background-color: var(--basic-blue-blue);
 }
 
+/* Grid for index */
+                      .icon-head {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                      }
+
+                      .red-button {
+                        margin: 20px;
+                      }
+
+
+                      .icon-list {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                      }
+
+                      .icon-logo-list ul {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+                      }
+
+.features-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  
+}
+
+.service {
+}
+
+.delivery {
+ }
+
+.container-contacts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.contacts { 
+}
+
+.contacts-office {  
+}
+
+.footer-social {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.social-button button {
+}
+
+.link-yellow {
+}
+
+/* Grid for catalog */
+
+.catalog-filter {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  align-content: start;
+  outline: 5px solid rgba(255, 0, 0, 0.7);
+  
+}
+
+.filter {
+
+  outline: 5px solid rgba(255, 0, 255, 0.7);
+   
+}
+
+.icon-list {
+  outline: 5px solid rgba(0, 255, 255, 0.7);
+  
+}
+
+.sorting {
+  outline: 5px solid rgba(0, 0, 255, 0.7);
+
+
+}
+
+.pagination {
+  outline: 5px solid rgba(0, 255, 0, 0.7);
+   
+}
+
+
+
+
+
+
+
+
 .site-navigation {
   background-color: var(--medium-blue);
   box-shadow: inset 0px -5px 0px var(--basic-blue-blue);
+  width: 940px;
 }
 
 .site-navigation-head:hover {
@@ -488,13 +590,6 @@ color: var(--light-gray);
 .cart:active {
   background-color: #161D29;
   opacity: 0.5;
-}
-
-.features-text {
-  font-family: "PT Sans", Arial, sans-serif;
-  font-size: 13px;
-  line-height: 24px;
-  font-weight: 400;
 }
 
 .login-link {
