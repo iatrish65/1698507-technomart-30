@@ -14,18 +14,21 @@
 		<header class="main-header">
 			<nav class="main-navigation">
 				<div class="wrapper header-navigation">
-				    <div class="header-nav-left">
-				        <a class="main-header-logo" href="index.html">
-				        <img src="img/icon/Logo-technomart.svg" width="108" height="18" alt="Логотип Техномарт">
-				        </a>
-				        <label for="search">
-				        <input type="text" class="search-input" placeholder="Поиск:">
-				        </label>
-				    </div>
+			          <a class="main-header-logo" href="index.html">
+			            <img src="img/icon/Logo-technomart.svg" width="108" height="18" alt="Логотип Техномарт">
+			          </a>
+			        <div class="header-nav-left header-nav-left-catalog">   
+			          <label for="search">
+			            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+			              <path fill-rule="evenodd" clip-rule="evenodd" d="M13.458 12.044L17 15.586L15.586 17L12.044 13.458C10.782 14.421 9.21 15 7.5 15C3.35786 15 0 11.6421 0 7.5C0 3.35786 3.35786 0 7.5 0C11.6421 0 15 3.35786 15 7.5C15.0001 9.14309 14.4581 10.7403 13.458 12.044ZM7.5 2C4.467 2 2 4.467 2 7.5C2.00331 10.5362 4.4638 12.9967 7.5 13C10.532 13 13 10.532 13 7.5C13 4.467 10.532 2 7.5 2Z" fill="white"/>
+			            </svg> 
+			            <input type="search" class="search-input" placeholder="Поиск:">
+			          </label>
+			        </div>
 				    <div class="header-nav-right">
 				        <a class="bookmarks" href="#">Закладки: 0</a>
-				        <a class="cart" href="#">Корзина: 10</a>
-				        <button class="checkout button" type="button">Оформить заказ</button>
+				        <a class="cart-catalog" href="#">Корзина: 10</a>
+				        <button class="checkout-button button" type="button">Оформить заказ</button>
 				    </div>
 				</div>
 		    </nav>
@@ -35,9 +38,13 @@
 						<li class="lead">Интернет-магазин строительных материалов и инструментов для ремонта</li>
 						<li class="header-address"><a class="contacts-phone" href="tel:+78125550555">+7 (812) 555-05-55</a><br>
 						г.Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</li>
-						<li><span class="name">Равшан Джамшутович</span></li>
-						<li><button class="menu-user button" type="button">Мои заказы</button></li>
-						<li><button class="menu-user button" type="button">Личный кабинет</button></li>
+						<div>
+							<ul class="personal">
+								<li><span class="name">Равшан Джамшутович</span></li>
+								<li><button class="menu-user button" type="button">Мои заказы</button></li>
+								<li><button class="menu-user button" type="button">Личный кабинет</button></li>
+							</ul>
+						</div>
 					</ul>
 					<nav class="site-navigation">
 						<ul>
@@ -55,41 +62,56 @@
 		</header>
 		<main class="page-catalog container">
 			<ul class="breadcrumbs">
-				<li><a class="breadcrumbs-items" href="index.html"></a></li>
+				<li><a class="breadcrumbs-items crumbshome" href="index.html"></a></li>
 				<li><a class="breadcrumbs-items" href="catalog.html">Каталог</a></li>
 				<li><a class="breadcrumbs-items" href="catalog.html">Инструмент</a></li>
 				<li>Перфораторы</li>
 			</ul>
-			<h2 class="breadcrumbs-heading heading-second">Перфораторы</h2>
-			
+			<h2 class="breadcrumbs-heading heading-second"><span>Перфораторы</span></h2>
 			<div class="catalog-filter">
 			<section class="filter">
-				<span class="filter-name">Фильтр:</span>
-				<span class="filter-heading">Цена:</span>
-				<p class="filter-price-scale">0</p>
-				<p class="filter-price-scale">30000</p>
+			    <fieldset class="filter-item">
+			        <legend>Цена:</legend>
+			        <div class="range-filter">
+			          <div class="range-controls">
+			            <div class="scale">
+			              <div class="bar"></div>
+			            </div>
+			            <div class="toggle toggle-min" tabindex="0"></div>
+			            <div class="toggle toggle-max" tabindex="0"></div>
+			          </div>
+			          <div class="price-controls">
+			            <label class="min-price">
+			               <input type="number" name="min-price" value="0">
+			            </label>
+			            <label class="max-price">
+			               <input type="number" name="max-price" value="30000">
+			            </label>
+			          </div>
+			        </div>
+			    </fieldset>
 				<form class="filter" method="get" action="https://echo.htmlacademy.ru">
 					<fieldset>
 						<legend class="filter-heading">Производители:</legend>
 						<ul>
 							<li class="filter-option filter-checkbox">
-								<input class="filter-input-checkbox filter-input" type="checkbox" name="bosh" id="filter-bosh" checked>
+								<input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="bosh" id="filter-bosh" checked>
 								<label for="filter-bosh">Bosh</label>
 							</li>
 							<li class="filter-option filter-checkbox">
-								<input class="filter-input-checkbox filter-input" disabled type="checkbox" name="interscol" id="filter-interscol">
+								<input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="interscol" id="filter-interscol">
 								<label for="filter-interscol">Интерскол</label>
 							</li>
 							<li class="filter-option filter-checkbox">
-								<input class="filter-input-checkbox filter-input" type="checkbox" name="makita" id="filter-makita" checked>
+								<input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="makita" id="filter-makita" checked>
 								<label for="filter-makita">Makita</label>
 							</li>
 							<li class="filter-option filter-checkbox">
-								<input class="filter-input-checkbox filter-input" type="checkbox" name="dewalt" id="filter-dewalt">
+								<input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="dewalt" id="filter-dewalt">
 								<label for="filter-dewalt">Dewalt</label>
 							</li>
 							<li class="filter-option filter-checkbox">
-								<input class="filter-input-checkbox filter-input" type="checkbox" name="hitachi" id="filter-hitachi">
+								<input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="hitachi" id="filter-hitachi">
 								<label for="filter-hitachi">Hitachi</label>
 							</li>
 						</ul>
@@ -98,11 +120,11 @@
 						<legend class="filter-heading">Питание:</legend>
 						<ul>
 							<li class="filter-option filter-radio">
-								<input class="filter-input-radio filter-input" type="radio" name="power" value="battery" id="filter-battery" checked>
+								<input class="visually-hidden filter-input-radio filter-input" type="radio" name="power" value="battery" id="filter-battery">
 								<label for="filter-battery">Аккумуляторные</label>
 							</li>
 							<li class="filter-option filter-radio">
-								<input class="filter-input-radio filter-input" type="radio" name="power" value="mains-supply" id="filter-mains-supply">
+								<input class="visually-hidden filter-input-radio filter-input" type="radio" name="power" value="mains-supply" id="filter-mains-supply">
 								<label for="filter-mains-supply">Сетевые</label>
 							</li>
 						</ul>
@@ -110,13 +132,13 @@
 					<button class="show-button button" type="submit">Показать</button>
 				</form> 
 			</section>
-			<!-- ДОбавила класс -->
 			<section class="purchase-block">
 				<ul class="sorting">		
 					<li><span>Сортировка:</span></li>
 					<li><span class="sorting-price">По цене</span></li>
 					<li><span class="sorting-type">По типу</span></li>
 					<li><span class="sorting-type">По функционалу</span></li>
+					<li><span class="sorting-button-up"></span><span class="sorting-button-down"></span></li>
 				</ul>
 				<ul class="icon-list">
 					<li class="icon-item">
@@ -181,8 +203,10 @@
 			</section>
 			</div>
 			<section class="features-perforator">
-				<h2 class="features-info heading-second">Пара слов о перфораторах</h2>
-				<p class="features-text">Перфоратор - универсальный строительный инструмент. Предназначен для сверсения и долбления отверстий в кирпиче, бетоне и камне.<br>Существуют электромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповерта и отбойного молотка.<br>В ассортиментном ряду есть выбор "трехрежимников": в одном устройстве будут совмещены отбойный молоток и ударная дрель.</p>
+				<span class="features-perforator-text">
+					<h2 class="features-info heading-second">Пара слов о перфораторах</h2>
+					<p class="features-text">Перфоратор - универсальный строительный инструмент. Предназначен для сверсения и долбления отверстий в кирпиче, бетоне и камне. Существуют электромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповерта и отбойного молотка. В ассортиментном ряду есть выбор "трехрежимников": в одном устройстве будут совмещены отбойный молоток и ударная дрель.</p>
+				</span>
 			</section>	
 		</main>  
 		<footer class="main-footer">
@@ -207,10 +231,26 @@
 			<section class="footer-social">
 				<p>© 2010–2019 Компания «Техномарт»<br> Все права защищены</p>	
 				<ul>
-					<li><a class="social-button button" href="#">Вконтакте</a></li>
-					<li><a class="social-button button" href="#">Фейсбук</a></li>
-					<li><a class="social-button button" href="#">Инстаграм</a></li>
-				</ul>
+        <li>
+          <a class="social-button button" href="#">
+            <span class="visually-hidden">Вконтакте</span>
+            <svg width="25" height="14" viewBox="0 0 128 76"><path d="M125,5.15c.89-3,0-5.15-4.23-5.15h-14a6,6,0,0,0-6.09,4S93.59,21.31,83.5,32.59c-3.26,3.26-4.74,4.3-6.52,4.3-.89,0-2.18-1-2.18-4V5.15c0-3.56-1-5.15-4-5.15h-22a3.37,3.37,0,0,0-3.56,3.22c0,3.37,5,4.15,5.56,13.64V37.48c0,4.52-.82,5.34-2.6,5.34-4.74,0-16.29-17.43-23.13-37.38C23.72,1.57,22.38,0,18.8,0H4.8C.8,0,0,1.88,0,4c0,3.71,4.75,22.1,22.1,46.42C33.67,67,50,76,64.8,76c8.9,0,10-2,10-5.45V58c0-4,.84-4.8,3.66-4.8,2.08,0,5.64,1,13.94,9C101.9,71.74,103.46,76,108.8,76h14c4,0,6-2,4.85-6s-5.8-9.64-11.81-16.4c-3.27-3.86-8.16-8-9.64-10.09-2.08-2.67-1.49-3.86,0-6.23,0,0,17-24,18.83-32.18Z" fill="#fff"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="social-button button" href="#">
+            <span class="visually-hidden">Фейсбук</span>
+            <svg width="12" height="22" viewBox="0 0 10.15 21.74"><path d="M3.34 1.12A4.77 4.77 0 0 1 6.53 0h3.61v3.81H7.81a1.07 1.07 0 0 0-1.09.83v2.55h3.42c-.08 1.23-.24 2.45-.41 3.67h-3v10.87H2.21V10.86H0V7.21h2.19V3.66a3.83 3.83 0 0 1 1.15-2.54z" fill="#fff"/></svg>
+          </a>
+        </li>
+
+        <li>
+          <a class="social-button button" href="#">
+            <span class="visually-hidden">Инстаграм</span>
+            <svg width="21" height="21" viewBox="0 0 20 20"><path d="M18 0H2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-8 6a4 4 0 1 1-4 4 4 4 0 0 1 4-4zM2.5 18a.47.47 0 0 1-.5-.5V9h2.1a3.4 3.4 0 0 0-.1 1 6 6 0 1 0 12 0 3.4 3.4 0 0 0-.1-1H18v8.5a.47.47 0 0 1-.5.5zM18 4.5a.47.47 0 0 1-.5.5h-2a.47.47 0 0 1-.5-.5v-2a.47.47 0 0 1 .5-.5h2a.47.47 0 0 1 .5.5z" fill="#fff"/></svg>
+          </a>
+        </li>
+      </ul>
 				<p>
 					Обратная связь:<br>
 					<a class="link-yellow" href="mail@htmlacademy.ru">mail@htmlacademy.ru</a>
